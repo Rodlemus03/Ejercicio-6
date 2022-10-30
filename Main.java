@@ -214,28 +214,13 @@ public class Main {
             System.out.println("El carrito esta vacio");
                 }else{
 
-                    int subEleccion=0;
             System.out.println("\n______________________________________________________________________________________________________________________________");
-            System.out.println("Desea mostrar el carrito: ");
-                    System.out.println("1. Normal");
-                    System.out.println("2. Ordenado por precios");
-                    subEleccion=teclado.nextInt();
                     //Normal
-                    if(subEleccion==1){
             System.out.println("\n______________________________________________________________________________________________________________________________");
-            System.out.println("__________ CARRITO NORMAL_____________");
+            System.out.println("__________ CARRITO _____________");
             carrito.listarCarrito();
-            
-        }//Ordenado por precio
-        else if(subEleccion==2){
-            System.out.println("\n______________________________________________________________________________________________________________________________");
-            System.out.println("__________ CARRITO ORDENADO POR PRECIOS ______________");
-
-                    }
-                    else{
-            System.out.println("\n______________________________________________________________________________________________________________________________");
-            System.out.println("Ingresa la opcion correcta porfavor ");
-                    }
+        
+                    
                 }
             }else if(seleccion==3){
                 if(listaArticulosTemporal.size()==0){
@@ -251,6 +236,23 @@ public class Main {
                     System.out.println(cliente.toString());
                     System.out.println("____________Datos de la compra_____________");
                     carrito.listarCarrito();
+                    Archivo clientes1=new Archivo("./registro_clientes.csv","nombre,nit,telefono");
+                    String linea="";
+                    linea+=cliente.getNombre()+",";
+                    linea+=cliente.getNit()+",";
+                    linea+=cliente.getTelefono();
+                    clientes1.escribirArchivo(linea);
+                    Archivo compras1=new Archivo("./registro_compras.csv","nombre,marca,precio,cliente");
+                    for(int i=0;i<listaArticulosTemporal.size();i++){
+                        compras1.escribirArchivo(listaArticulosTemporal.get(i).toString()+","+cliente.getNombre());
+                    }
+
+
+
+
+
+
+
                 }
                 
             }else{

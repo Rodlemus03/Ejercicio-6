@@ -19,17 +19,11 @@ public class Carrito {
     }
     public void listarCarrito(){
         for(int i=0;i<productos.size();i++){
-            System.out.println(productos.get(i).getNombre());
+            System.out.println("********"+productos.get(i).getNombre());
         }
         System.out.println("Total: "+total);
     }
-    public void listarCarritoOrdenado(){
-    ArrayList<Articulo> auxiliar=new ArrayList<Articulo>();
-    for(int i=0;i<auxiliar.size();i++){
-        
-
-    }
-    }
+    
     
     public String getCliente() {
         return this.cliente;

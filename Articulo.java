@@ -62,6 +62,9 @@ public class Articulo implements Caracteristicas{
 
     @Override
     public String toString() {
+        String cadenaCsv="";
+        cadenaCsv+=getNombre()+","+getMarca()+","+getPrecio();
+        /*
         return "{" +
             " nombre='" + getNombre() + "'" +
             ", precio='" + getPrecio() + "'" +
@@ -69,6 +72,8 @@ public class Articulo implements Caracteristicas{
             ", marca='" + getMarca() + "'" +
             ", portable='" + isPortable() + "'" +
             "}";
+            */
+            return cadenaCsv;
     }
     @Override
     public String llamada(){
