@@ -19,6 +19,10 @@ public class Archivo {
         }
     }
     
+    
+    /** 
+     * @param linea
+     */
     public void escribirArchivo(String linea){
         try {
             FileWriter miEscritor = new FileWriter(archivo);
@@ -29,6 +33,10 @@ public class Archivo {
             e.printStackTrace();
         }
     }
+    
+    /** 
+     * @return ArrayList<String>
+     */
     public ArrayList<String> leerArchivo(){
         Scanner miLector;
         ArrayList<String> lineas = new ArrayList<String>();
@@ -44,6 +52,10 @@ public class Archivo {
 
         return lineas;
     }
+    
+    /** 
+     * @return String
+     */
     public String leerArchivoString(){
         String texto = "";
         try {
